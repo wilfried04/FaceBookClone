@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Show</h1>
+
+<table>
+  <thead>
+    <tr> 
+      <th class="content" style="width:200px">Contents</th>
+      <th class="list" style="width:400px">Picture</th>
+      <th class="user" style="width:200px">User</th> 
+      <th class="user" style="width:200px">Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @feeds.each do |feed| %>
+      <tr> 
+        <td class= "content" style="width:200px"><%= feed.content %></td>
+        <td class="list" style="width:400px"><%= image_tag feed.image.url, :id => "idImage" %></td>
+        <td class= "content" style="width:200px"><%= feed.user.name %></td>
+        <td style="width:200px">
+          <%if current_user && current_user == feed.user%>
+            <%= link_to 'Details', feed_path(feed.id) %>
+            <%= link_to 'Editing', edit_feed_path(feed.id) %>
+            <%= link_to 'deleted', feed_path(feed.id), method: :delete, data: { confirm: 'Are you sure to delete it？' } %>
+          <%else%>
+            <div class="alert alert-warning"> You have not privilege to do action</div>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<div class="link">
+  <%= link_to 'New Post', new_feed_path %>
+</div>

@@ -1,0 +1,4 @@
+<h1>Blog Details</h1> 
+<p>Contents: <%= @blog.content %></p>
+<%= link_to "Edit...", edit_blog_path(@blog.id) %>
+<%= link_to 'Delete.', blog_path(@blog.id), method: :delete, data: { confirm: 'Are you sure?' }%>

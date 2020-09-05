@@ -1,0 +1,11 @@
+<h1>Detail screen</h1>
+<p id="notice"><%= notice %></p> 
+<p>Content: <%= @feed.content %></p>
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @feed.image.url %>
+</p>
+
+<%= link_to 'Edit', edit_feed_path(@feed) %> |
+<%= link_to 'Delete', feed_path(@feed.id), method: :delete, data: { confirm: 'Are you sure to delete it!!!' } %> |
+<%= link_to 'Back to the list', feeds_path%>

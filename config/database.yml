@@ -1,0 +1,22 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: meetbook_development
+
+
+
+test:
+  <<: *default
+  database: meetbook_test
+
+production:
+  <<: *default
+  database: meetbook_production
+  username: meetbook
+  password: <%= ENV['MEETBOOK_DATABASE_PASSWORD'] %>

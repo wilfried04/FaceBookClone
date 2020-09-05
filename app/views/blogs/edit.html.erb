@@ -1,0 +1,14 @@
+<% @blog.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+<% end %>
+<p><%=notice %></p>
+<%= form_with(model: @blog, local:true) do |form| %>
+  <br>
+  <div class="blog_content">
+    <%= form.label :"Contents" %>
+    <%= form.text_field :content %>
+  </div>
+  <br>
+  <%= form.submit "Edit." %>
+<% end %>
+<%= link_to "Show", blogs_path %>
