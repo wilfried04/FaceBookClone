@@ -11,12 +11,17 @@
  * It is generally better to create a new file per style scope.
  *
  *= require feeds.scss
+ *= blogs.scss
+ *= scaffolds.scss
+ *= sessions.scss
+ *= users.scss
  *= require bootstrap/dist/css/bootstrap.min
  *= require_tree .
  *= require_self
  */
 html,body{
   height: 98%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
  .container{
@@ -29,7 +34,7 @@ html,body{
  }
 
  .navbar {
-   background-color: #062564;
+   background-color: hsl(228, 66%, 41%);
  }
  .navbar-default .navbar-brand{
    color: white;
@@ -63,7 +68,7 @@ html,body{
 }
  footer {
    width:98%;
-   background-color:  #062564;;
+   background-color:  #1d479c;;
    color:white;
    text-align: center;
    margin: auto;
